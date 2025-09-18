@@ -31,7 +31,7 @@ Aqui estão listados os projetos desenvolvidos, do mais recente para o mais anti
 
 ### 1. Blog Responsivo com Grid e Flexbox
 
--   **Link para o código:** [`./blog-grid-flexbox/`](./blog-grid-flexbox/)
+-   **Link para o código:** [`./blog-grid-flexbox/`](https://github.com/PedroBaffa/UDWMJ-USJT)
 
 **Descrição:**
 Página inicial de um blog com layout moderno e totalmente responsivo, construído para praticar a combinação de CSS Grid para a estrutura macro (esqueleto da página) e Flexbox para a organização de componentes internos (menus, cards, rodapé).
@@ -42,15 +42,6 @@ Página inicial de um blog com layout moderno e totalmente responsivo, construí
 -   **Design Responsivo** com a abordagem *Mobile-First*.
 -   **Acessibilidade** com foco visível em elementos interativos e uso de `aria-labels`.
 -   **Boas práticas de CSS**, como o uso de variáveis (custom properties).
-
----
-
-*(Aqui você adicionará seus próximos projetos, seguindo o mesmo modelo)*
-
-### 2. (Próximo Projeto com React/Node)
--   **Link para o código:** `...`
--   **Descrição:** `...`
--   **Conceitos aplicados:** `...`
 
 ---
 
