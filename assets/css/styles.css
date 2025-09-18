@@ -1,0 +1,426 @@
+/*------------------------------------*\
+          #CONFIGURAÇÕES GERAIS E VARIÁVEIS
+        \*------------------------------------*/
+:root {
+    --color-bg: #f9fafb;
+    --color-surface: #ffffff;
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-text: #111827;
+    --color-text-muted: #6b7280;
+    --color-border: #e5e7eb;
+    --color-focus-ring: #93c5fd;
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Lora', serif;
+    --gap: 1.5rem;
+    /* 24px */
+    --radius: 0.5rem;
+    /* 8px */
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Desafio Opcional: Modo Escuro */
+body.dark {
+    --color-bg: #111827;
+    --color-surface: #1f2937;
+    --color-primary: #60a5fa;
+    --color-primary-hover: #93c5fd;
+    --color-text: #f9fafb;
+    --color-text-muted: #9ca3af;
+    --color-border: #374151;
+    --color-focus-ring: #3b82f6;
+}
+
+/* Reset Básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a,
+button,
+input {
+    font-family: inherit;
+    color: inherit;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Acessibilidade: Foco visível */
+:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    /* Responsividade: Tipografia fluida com clamp() */
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+/*------------------------------------*\
+          #LAYOUT MACRO (CSS GRID)
+        \*------------------------------------*/
+.layout {
+    display: grid;
+    gap: var(--gap);
+    padding: var(--gap);
+    max-width: 1440px;
+    margin: 0 auto;
+
+    /* Tarefa 1: Grid Areas - Mobile First (1 coluna) */
+    /* Esboço ASCII:
+            +----------+
+            |  header  |
+            +----------+
+            |  subnav  |
+            +----------+
+            |   main   |
+            +----------+
+            |  aside   |
+            +----------+
+            |  footer  |
+            +----------+
+            */
+    grid-template-areas:
+        "header"
+        "subnav"
+        "main"
+        "aside"
+        "footer";
+}
+
+/* Associa cada elemento à sua área */
+.header {
+    grid-area: header;
+}
+
+.subnav {
+    grid-area: subnav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Breakpoint para Tablet e Desktop (≥ 768px) */
+@media (min-width: 768px) {
+    .layout {
+        /* Tarefa 1: Grid Areas - Tablet/Desktop (2 colunas) */
+        /* Esboço ASCII:
+                +----------+----------+
+                |  header  |  header  |
+                +----------+----------+
+                |  subnav  |  subnav  |
+                +----------+----------+
+                |   main   |  aside   |
+                +----------+----------+
+                |  footer  |  footer  |
+                +----------+----------+
+                */
+        grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
+        grid-template-areas:
+            "header header"
+            "subnav subnav"
+            "main   aside"
+            "footer footer";
+    }
+}
+
+/*------------------------------------*\
+          #COMPONENTES (FLEXBOX E ESTILOS)
+        \*------------------------------------*/
+
+/* Header */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite quebrar em telas menores */
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+    padding: var(--gap);
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+.header .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* Tarefa 2: Menu Principal (Flex) */
+.header .menu {
+    display: flex;
+    flex-wrap: wrap;
+    /* Garante a quebra dos itens */
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+}
+
+.header .menu a {
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+}
+
+.header .menu a:hover,
+.header .menu a:focus-visible {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+/* Subnav */
+.subnav {
+    /* Desafio Opcional: Sticky subnav */
+    position: sticky;
+    top: var(--gap);
+    /* "Gruda" abaixo do topo, considerando o espaçamento */
+    background-color: var(--color-bg);
+    padding: 0.5rem 0;
+    z-index: 10;
+}
+
+/* Tarefa 3: Chips de Categoria (Flex) */
+.subnav .chips {
+    display: flex;
+    flex-wrap: wrap;
+    /* Quebra os chips em telas pequenas */
+    gap: 0.75rem;
+}
+
+.subnav .chip {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    /* Formato de pílula */
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.subnav .chip:hover {
+    border-color: var(--color-primary);
+}
+
+.subnav .chip.is-active {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border-color: var(--color-primary);
+}
+
+/* Main Content e Cards */
+/* Tarefa 4: Cards de Post (Flex) */
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    /* Essencial para o layout fluido */
+    gap: var(--gap);
+}
+
+.card {
+    /* flex: <grow> <shrink> <basis> */
+    /* 1: pode crescer | 1: pode encolher | 320px: base de largura */
+    /* Isso cria as colunas fluidas automaticamente */
+    flex: 1 1 320px;
+
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    /* Garante que a imagem não vaze */
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Contexto para o badge */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--gap);
+    flex-grow: 1;
+    /* Faz o conteúdo ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+}
+
+.card-excerpt {
+    color: var(--color-text-muted);
+    flex-grow: 1;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-link::after {
+    content: ' →';
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* Extra Opcional: Badge "Novo" */
+.card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 999px;
+}
+
+/* Sidebar */
+.aside {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.widget {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--gap);
+}
+
+.widget-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+}
+
+/* Tarefa 5: Widgets Adicionais */
+.widget-list {
+    list-style: none;
+    padding: 0;
+}
+
+.widget-list li {
+    margin-bottom: 0.5rem;
+}
+
+.widget-list a {
+    text-decoration: none;
+}
+
+.widget-list a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.widget-list a::before {
+    content: '✓ ';
+    /* Ícone simples */
+    color: var(--color-primary);
+}
+
+.newsletter-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+}
+
+.newsletter-form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Footer */
+.footer {
+    padding: var(--gap);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    /* Tarefa: Flex obrigatório no Footer */
+    display: flex;
+    flex-wrap: wrap;
+    /* Quebra elegante */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: var(--color-primary);
+}

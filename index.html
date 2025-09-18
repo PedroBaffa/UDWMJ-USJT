@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Grid + Flexbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <header class="header">
+            <a href="#" class="logo">MeuBlog</a>
+            <nav aria-label="Navegação Principal">
+                <ul class="menu">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Tutoriais</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Carreira</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav class="subnav" aria-label="Filtro de Categorias">
+            <div class="chips">
+                <button class="chip is-active">Todos</button>
+                <button class="chip">CSS</button>
+                <button class="chip">JavaScript</button>
+                <button class="chip">Acessibilidade</button>
+                <button class="chip">Performance</button>
+                <button class="chip">Design</button>
+            </div>
+        </nav>
+
+        <main class="main">
+            <div class="posts">
+                <article class="card">
+                    <span class="card-badge">Novo</span>
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTc5fDB8MXxzZWFyY2h8Mnx8Y29kZXx8ZW58MHx8fHwxNjYwODQyMjI5&ixlib=rb-1.2.1&q=80&w=400"
+                        alt="Código em um editor de texto." class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Dominando CSS Grid e Flexbox em 2025</h2>
+                        <p class="card-excerpt">Aprenda a criar layouts complexos e responsivos combinando o poder do
+                            Grid para macro e Flexbox para micro.</p>
+                        <a href="#" class="card-link">Ler mais</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTc5fDB8MXxzZWFyY2h8NHx8cHJvZ3JhbW1pbmd8fGVu&q=80&w=400"
+                        alt="Laptop com código e logos de tecnologias." class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">JavaScript Moderno: Features que você precisa conhecer</h2>
+                        <p class="card-excerpt">ES2023 trouxe novidades incríveis. Veja o que mudou e como aplicar em
+                            seus projetos para ter um código mais limpo.</p>
+                        <a href="#" class="card-link">Ler mais</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTc5fDB8MXxzZWFyY2h8MXx8Y29kZXx8ZW58MHx8fHwxNjYwODQyMjI5&ixlib=rb-1.2.1&q=80&w=400"
+                        alt="Tela de computador exibindo código HTML." class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Acessibilidade Web (a11y) não é opcional</h2>
+                        <p class="card-excerpt">Garantir que todos possam usar seu site é crucial. Conheça as principais
+                            diretrizes e ferramentas para começar.</p>
+                        <a href="#" class="card-link">Ler mais</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTc5fDB8MXxzZWFyY2h8Nnx8cHJvZ3JhbW1pbmd8fGVu&q=80&w=400"
+                        alt="Mesa de trabalho com dois monitores e código." class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Otimização de Performance: Core Web Vitals</h2>
+                        <p class="card-excerpt">Seu site está lento? Entenda o que são LCP, FID e CLS e como otimizá-los
+                            para melhorar a experiência do usuário.</p>
+                        <a href="#" class="card-link">Ler mais</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <span class="card-badge">Popular</span>
+                    <img src="https://images.unsplash.com/photo-1522252234503-e356532cafd5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTc5fDB8MXxzZWFyY2h8NXx8Y29kZXx8ZW58MHx8fHwxNjYwODQyMjI5&ixlib=rb-1.2.1&q=80&w=400"
+                        alt="Código sendo digitado em um laptop no escuro." class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">Construindo um Design System do Zero</h2>
+                        <p class="card-excerpt">Aprenda os passos para criar um sistema de design coeso que acelera o
+                            desenvolvimento e mantém a consistência.</p>
+                        <a href="#" class="card-link">Ler mais</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTc5fDB8MXxzZWFyY2h8N3x8cHJvZ3JhbW1pbmd8fGVu&q=80&w=400"
+                        alt="Setup de desenvolvimento com teclado iluminado." class="card-image">
+                    <div class="card-content">
+                        <h2 class="card-title">API Rest vs. GraphQL: Qual escolher?</h2>
+                        <p class="card-excerpt">Uma análise comparativa entre as duas abordagens para construção de
+                            APIs, com suas vantagens e desvantagens.</p>
+                        <a href="#" class="card-link">Ler mais</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside class="aside">
+            <div class="widget">
+                <h3 class="widget-title">Sobre Mim</h3>
+                <p>Sou Pedro Baffa, estudante de ADS e entusiasta de tecnologias web, atualmente trabalhando com
+                    marketing e buscando aprofundar meus conhecimentos em desenvolvimento front-end.</p>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">Categorias</h3>
+                <ul class="widget-list">
+                    <li><a href="#">Desenvolvimento Web</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Carreira</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">Assine a Newsletter</h3>
+                <form class="newsletter-form">
+                    <label for="email">Receba os posts no seu e-mail!</label>
+                    <input type="email" id="email" placeholder="seu.email@exemplo.com" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+            </div>
+        </aside>
+
+        <footer class="footer">
+            <p>&copy; 2025 Pedro Baffa. Todos os direitos reservados.</p>
+            <div class="footer-nav">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Contato</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
