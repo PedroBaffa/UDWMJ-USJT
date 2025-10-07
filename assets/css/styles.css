@@ -1,0 +1,185 @@
+/*------------------------------------*\
+  #CONFIGURAÇÕES GERAIS E VARIÁVEIS
+\*------------------------------------*/
+:root {
+    /* Cores */
+    --color-background: #FFFFFF;
+    --color-text: #333333;
+    --color-primary: #007BFF; /* Azul para botões principais */
+    --color-secondary: #6c757d; /* Cinza para botões secundários */
+    --color-surface: #f8f9fa; /* Fundo para seções */
+    --color-border: #dee2e6;
+
+    /* Tipografia */
+    --font-primary: 'Roboto', sans-serif;
+    --font-heading: 'Merriweather', serif;
+    
+    /* Escala de Espaçamento (conforme o exercício) */
+    --space-xs: 0.25rem;  /* 4px */
+    --space-sm: 0.5rem;   /* 8px */
+    --space-md: 1rem;     /* 16px */
+    --space-lg: 1.5rem;   /* 24px */
+    --space-xl: 2rem;     /* 32px */
+}
+
+/* Reset Básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-md);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/*------------------------------------*\
+  #COMPONENTES
+\*------------------------------------*/
+.btn {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary);
+    color: #fff;
+    text-decoration: none;
+}
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    flex-wrap: wrap; /* Para telas pequenas */
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.search-form input {
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+.search-form button {
+    /* No design, o botão "buscar" está visualmente oculto ou integrado. */
+    /* Por enquanto vamos deixá-lo simples */
+    display: none; 
+}
+
+
+/*------------------------------------*\
+  #SEÇÃO HERO (PRIMEIRO BLOCO)
+\*------------------------------------*/
+.hero {
+    background-color: var(--color-surface);
+    padding: var(--space-xl) 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+/*------------------------------------*\
+  #RESPONSIVIDADE (MOBILE-FIRST)
+\*------------------------------------*/
+
+/* Estilos base já são para mobile */
+
+/* Tablet (ex: 768px) */
+@media (min-width: 768px) {
+    .main-header .container {
+        flex-wrap: nowrap;
+    }
+}
