@@ -4,7 +4,7 @@ Repositório dedicado aos projetos, exercícios e estudos desenvolvidos durante 
 
 O objetivo é aplicar e documentar os conceitos aprendidos em aula, construindo um portfólio prático das competências adquiridas.
 
-**Autor:** Pedro Baffa
+**Autores:** Pedro Baffa, Iann Schmith, Leonardo Avigro, Mateus Simões
 
 ---
 
@@ -24,57 +24,3 @@ Ao longo da disciplina, exploraremos diversas tecnologias e conceitos fundamenta
 ![UI/UX](https://img.shields.io/badge/UI/UX-lightgrey?style=for-the-badge)
 
 ---
-
-## 📂 Projetos
-
-Aqui estão listados os projetos desenvolvidos, do mais recente para o mais antigo.
-
-### 1. Blog Responsivo com Grid e Flexbox
-
--   **Link para o código:** [`./blog-grid-flexbox/`](https://github.com/PedroBaffa/UDWMJ-USJT)
-
-**Descrição:**
-Página inicial de um blog com layout moderno e totalmente responsivo, construído para praticar a combinação de CSS Grid para a estrutura macro (esqueleto da página) e Flexbox para a organização de componentes internos (menus, cards, rodapé).
-
-**Conceitos aplicados:**
--   `CSS Grid` com `grid-template-areas` para um layout semântico.
--   `Flexbox` para alinhamento e distribuição de múltiplos itens.
--   **Design Responsivo** com a abordagem *Mobile-First*.
--   **Acessibilidade** com foco visível em elementos interativos e uso de `aria-labels`.
--   **Boas práticas de CSS**, como o uso de variáveis (custom properties).
-
----
-
-## 🛠️ Como Executar os Projetos
-
-As instruções variam dependendo da tecnologia utilizada no projeto.
-
-### Para Projetos Estáticos (HTML, CSS, JS puro)
-1.  Navegue até a pasta do projeto (ex: `cd blog-grid-flexbox`).
-2.  Abra o arquivo `index.html` no seu navegador de preferência.
-
-### Para Projetos com Node.js e/ou React
-Esses projetos precisam que as dependências sejam instaladas e um servidor de desenvolvimento seja iniciado.
-
-1.  **Navegue até a pasta do projeto:**
-    ```bash
-    cd nome-da-pasta-do-projeto-react
-    ```
-2.  **Instale as dependências (só na primeira vez):**
-    ```bash
-    npm install
-    ```
-3.  **Inicie o servidor de desenvolvimento:**
-    ```bash
-    npm start
-    ```
-4.  Abra o endereço `http://localhost:3000` (ou o indicado no terminal) no seu navegador.
-
----
-
-## 👨‍💻 Contato
-
-Conecte-se comigo nas redes profissionais:
-
--   **LinkedIn:** [Pedro Baffa](https://www.linkedin.com/in/pedro-baffa/)
--   **GitHub:** [@PedroBaffa](https://github.com/PedroBaffa)
